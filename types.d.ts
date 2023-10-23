@@ -1,16 +1,14 @@
-type Posts = {
-  id: string;
-  title: string;
-  subTitle: string;
-  src: string;
-  desc: string;
-};
+type Posts =
+  | { desc: string; id: number; src: string; subTitle: string; title: string }
+  | undefined;
 
-type FetchDataType = {
-  name: string;
-  role: string;
-  img: string;
-  email: string;
-  exp: string;
-  address: string;
-};
+type FetchDataType =
+  | {
+      address: string;
+      email: string;
+      exp: string;
+      img: string;
+      name: string;
+      role: string;
+    }
+  | undefined;

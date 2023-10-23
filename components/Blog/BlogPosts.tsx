@@ -1,13 +1,20 @@
 import BlogCard from "../Home/Blog/BlogCard";
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
+import { Database } from "@/utils/supabaseDb";
 
-async function getPosts(): Promise<Posts[]> {
-  const req = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/posts");
+async function fetchPosts() {
+  const cookieStore = cookies();
+  const supabase = createServerComponentClient<Database>({
+    cookies: () => cookieStore,
+  });
+  const { data: blog } = await supabase.from("blog").select();
 
-  return await req.json();
+  return blog;
 }
 
 export default async function BlogPosts() {
-  const posts = await getPosts();
+  const posts = await fetchPosts();
 
   return (
     <section className="max-w-[1378px] py-[200px] mx-auto max-lg:py-[80px]">

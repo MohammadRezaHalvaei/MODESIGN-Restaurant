@@ -1,15 +1,26 @@
 import ChefsItem from "./ChefsItem";
 
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
+import { Database } from "@/utils/supabaseDb";
+
+async function fetchChefsDetails(param: string) {
+  const cookieStore = cookies();
+  const supabase = createServerComponentClient<Database>({
+    cookies: () => cookieStore,
+  });
+  const { data: details, error } = await supabase
+    .from("chefs")
+    .select()
+    .eq("name", param.replace("%20", " "));
+
+  if (error) throw error;
+
+  return details?.at(0);
+}
+
 export default async function ChefsDetails({ name }: { name: string }) {
-  async function getData(): Promise<FetchDataType> {
-    const req = await fetch(
-      process.env.NEXT_PUBLIC_API_URL + `/api/chefs/${name}`
-    );
-
-    return await req.json();
-  }
-
-  const data = await getData();
+  const data = await fetchChefsDetails(name);
 
   return (
     <section

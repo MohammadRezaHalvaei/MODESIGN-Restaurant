@@ -45,7 +45,7 @@ export default function ChefsItem({ data }: { data: FetchDataType }) {
         transition={{ duration: 0.5, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        <Image src={data?.img} alt="Chef Image" width={542} height={670} />
+        <Image src={data!.img} alt="Chef Image" width={542} height={670} />
       </motion.div>
       <article>
         <motion.div

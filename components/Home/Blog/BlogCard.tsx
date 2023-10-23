@@ -8,7 +8,7 @@ type BlogCardTypes = {
   src: string;
   title: string;
   text: string;
-  link: string;
+  link: number | string;
 };
 
 export default function BlogCard({ src, title, text, link }: BlogCardTypes) {

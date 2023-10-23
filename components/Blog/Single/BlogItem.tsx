@@ -41,8 +41,8 @@ export default function BlogItem({ data }: { data: Posts }) {
         </article>
         <article className="mb-10">
           <Image
-            src={data?.src}
-            alt={data?.title}
+            src={data!.src}
+            alt={data!.title}
             className="mb-[52px]"
             height={612}
             width={1320}

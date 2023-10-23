@@ -8,31 +8,27 @@ import abramo from "@/public/chefs/Abramo.png";
 import takeo from "@/public/chefs/Takeo.png";
 
 const chefs = [
-  { src: avroko, name: "Avroko", role: "Master Chef", link: "Avroko" },
-  { src: evan, name: "Evan Mattew", role: "Master Chef", link: "Evan Mattew" },
+  { src: avroko, name: "Avroko", role: "Master Chef" },
+  { src: evan, name: "Evan Mattew", role: "Master Chef" },
   {
     src: diane,
     name: "Diane Clarkson",
     role: "Master Chef",
-    link: "Diane Clarkson",
   },
   {
     src: dan,
     name: "Dan Rafalin",
     role: "Assistant Chef",
-    link: "Dan Rafalin",
   },
   {
     src: abramo,
     name: "Abramo Baldovino",
     role: "Master Chef",
-    link: "Abramo Baldovino",
   },
   {
     src: takeo,
     name: "Takeo Andrea",
     role: "Master Chef",
-    link: "Takeo Andrea",
   },
 ];
 
@@ -55,7 +51,7 @@ export default function Team() {
         {chefs.map((chef) => (
           <ChefsItem
             key={chef.name}
-            link={chef.link}
+            link={chef.name}
             src={chef.src}
             name={chef.name}
             role={chef.role}

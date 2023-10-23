@@ -4,7 +4,7 @@ import Link from "next/link";
 type ContactItemProps = {
   src: StaticImageData;
   title: string;
-  text: string;
+  text: string | undefined;
 };
 
 export default function ContactItem({ src, title, text }: ContactItemProps) {

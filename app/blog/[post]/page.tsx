@@ -1,33 +1,28 @@
 import BlogItem from "@/components/Blog/Single/BlogItem";
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
+import { Database } from "@/utils/supabaseDb";
 
-// async function getPosts(): Promise<Posts[]> {
-//   const req = await fetch(process.env.NEXT_PUBLIC_API_URL + `/api/posts`);
+async function fetchPosts(params: string) {
+  const cookieStore = cookies();
+  const supabase = createServerComponentClient<Database>({
+    cookies: () => cookieStore,
+  });
+  const { data: blog } = await supabase.from("blog").select().eq("id", params);
 
-//   return await req.json();
-// }
+  return blog?.at(0);
+}
 
-// export async function generateStaticParams() {
-//   const posts = await getPosts();
-
-//   return posts?.map((post) => ({
-//     post: post.id,
-//   }));
-// }
+export async function generateStaticParams() {
+  return [{ post: "1" }, { post: "2" }, { post: "3" }, { post: "4" }];
+}
 
 export default async function BlogPostPage({
   params: { post },
 }: {
   params: { post: string };
 }) {
-  async function getPosts(): Promise<Posts> {
-    const req = await fetch(
-      process.env.NEXT_PUBLIC_API_URL + `/api/posts/${post}`
-    );
-
-    return await req.json();
-  }
-
-  const data = await getPosts();
+  const data = await fetchPosts(post);
 
   return (
     <main className="max-w-[1378px] mx-auto pt-[200px] pb-[100px] max-lg:py-[100px] px-10 max-md:px-4">
