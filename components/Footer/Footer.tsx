@@ -101,12 +101,17 @@ export default function Footer() {
           <Link
             href="https://modesign-portfolio.vercel.app"
             className="text-[#E1B168]"
+            target="_blank"
           >
             {" "}
             MODESIGN{" "}
           </Link>
           - Powered by{" "}
-          <Link href="https://www.figma.com" className="text-[#E1B168]">
+          <Link
+            href="https://www.figma.com"
+            target="_blank"
+            className="text-[#E1B168]"
+          >
             Figma
           </Link>
         </motion.p>
