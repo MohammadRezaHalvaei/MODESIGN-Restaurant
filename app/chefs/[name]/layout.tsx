@@ -7,8 +7,7 @@ export async function generateMetadata({
     const req = await fetch(
       process.env.NEXT_PUBLIC_API_URL + `/api/chefs/${name}`
     );
-    // The return value is *not* serialized
-    // You can return Date, Map, Set, etc.
+
     return await req.json();
   }
   const data = await getData();
