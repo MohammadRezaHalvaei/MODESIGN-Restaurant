@@ -4,7 +4,9 @@ export async function generateMetadata({
   params: { post: string };
 }) {
   async function getPosts(): Promise<Posts> {
-    const req = await fetch(`http://127.0.0.1:3000/api/posts/${post}`);
+    const req = await fetch(
+      process.env.NEXT_PUBLIC_API_URL + `/api/posts/${post}`
+    );
 
     return await req.json();
   }

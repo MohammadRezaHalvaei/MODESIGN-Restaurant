@@ -2,19 +2,19 @@ import ChefsDetails from "@/components/Chefs/Single/ChefsDetails";
 import Video from "@/components/Chefs/Single/Video";
 import Reservation from "@/components/Footer/Reservation";
 
-// async function getPosts(): Promise<FetchDataType[]> {
-//   const req = await axios.get(`http://127.0.0.1:3000/api/chefs`);
+async function getPosts(): Promise<FetchDataType[]> {
+  const req = await fetch(process.env.NEXT_PUBLIC_API_URL + `/api/chefs`);
 
-//   return await req.data;
-// }
+  return await req.json();
+}
 
-// export async function generateStaticParams() {
-//   const chefs = await getPosts();
+export async function generateStaticParams() {
+  const chefs = await getPosts();
 
-//   return chefs?.map((chef) => ({
-//     name: chef.name,
-//   }));
-// }
+  return chefs?.map((chef) => ({
+    name: chef.name,
+  }));
+}
 
 export default function ChefsName({
   params: { name },

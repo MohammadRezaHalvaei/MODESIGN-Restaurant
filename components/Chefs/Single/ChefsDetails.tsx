@@ -2,7 +2,9 @@ import ChefsItem from "./ChefsItem";
 
 export default async function ChefsDetails({ name }: { name: string }) {
   async function getData(): Promise<FetchDataType> {
-    const req = await fetch(`http://127.0.0.1:3000/api/chefs/${name}`);
+    const req = await fetch(
+      process.env.NEXT_PUBLIC_API_URL + `/api/chefs/${name}`
+    );
 
     return await req.json();
   }

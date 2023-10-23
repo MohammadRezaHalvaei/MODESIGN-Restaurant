@@ -1,7 +1,7 @@
 import BlogCard from "../Home/Blog/BlogCard";
 
 async function getPosts(): Promise<Posts[]> {
-  const req = await fetch("http://127.0.0.1:3000/api/posts");
+  const req = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/posts");
 
   return await req.json();
 }

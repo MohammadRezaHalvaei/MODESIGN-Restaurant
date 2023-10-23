@@ -1,18 +1,18 @@
 import BlogItem from "@/components/Blog/Single/BlogItem";
 
-// async function getPosts(): Promise<Posts[]> {
-//   const req = await fetch(`http://127.0.0.1:3000/api/posts`);
+async function getPosts(): Promise<Posts[]> {
+  const req = await fetch(process.env.NEXT_PUBLIC_API_URL + `/api/posts`);
 
-//   return await req.json();
-// }
+  return await req.json();
+}
 
-// export async function generateStaticParams() {
-//   const posts = await getPosts();
+export async function generateStaticParams() {
+  const posts = await getPosts();
 
-//   return posts?.map((post) => ({
-//     post: post.id,
-//   }));
-// }
+  return posts?.map((post) => ({
+    post: post.id,
+  }));
+}
 
 export default async function BlogPostPage({
   params: { post },
@@ -20,7 +20,9 @@ export default async function BlogPostPage({
   params: { post: string };
 }) {
   async function getPosts(): Promise<Posts> {
-    const req = await fetch(`http://127.0.0.1:3000/api/posts/${post}`);
+    const req = await fetch(
+      process.env.NEXT_PUBLIC_API_URL + `/api/posts/${post}`
+    );
 
     return await req.json();
   }
