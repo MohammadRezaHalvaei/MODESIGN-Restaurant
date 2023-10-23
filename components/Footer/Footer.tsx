@@ -98,7 +98,10 @@ export default function Footer() {
           className="parag max-md:text-lg max-md:text-center"
         >
           © Copyright - Restaurantate | Coded by
-          <Link href="https://modesign.com" className="text-[#E1B168]">
+          <Link
+            href="https://modesign-portfolio.vercel.app"
+            className="text-[#E1B168]"
+          >
             {" "}
             MODESIGN{" "}
           </Link>
