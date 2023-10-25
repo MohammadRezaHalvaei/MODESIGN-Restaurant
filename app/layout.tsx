@@ -4,7 +4,7 @@ import { cormorant, josefin, cervanttis } from "./fonts";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Restaurant - MODESIGN",
