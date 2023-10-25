@@ -1,21 +1,41 @@
 import BlogCard from "../Home/Blog/BlogCard";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
-import { Database } from "@/utils/supabaseDb";
 
-async function fetchPosts() {
-  const cookieStore = cookies();
-  const supabase = createServerComponentClient<Database>({
-    cookies: () => cookieStore,
-  });
-  const { data: blog } = await supabase.from("blog").select();
-
-  return blog;
-}
+const posts = [
+  {
+    id: 1,
+    title: "The Legend of US Cuisine: The Story of Hungry People",
+    subTitle:
+      "Capitalize on low-hanging fruit to identify a ballpark value added matrix economically and the creative activity to beta test override the food quality.\n",
+    src: "/blog/single/bread.jpg",
+    desc: "The Legend of US Cuisine",
+  },
+  {
+    id: 2,
+    title: "The Most Popular Delicious Food of Mediterranean Cuisine",
+    subTitle:
+      "Strategies on low-hanging fruit to identify a ballpark value added matrix economically and the creative activity to beta test override the food quality.",
+    src: "/blog/single/chicken.jpg",
+    desc: "Mediterranean Cuisine",
+  },
+  {
+    id: 3,
+    title: "The Best Seafood in San Francisco, According to Top Chefs",
+    subTitle:
+      "Collaborative on low-hanging fruit to identify a ballpark value added matrix economically and the creative activity to beta test override the food quality.",
+    src: "/blog/single/hamburger.jpg",
+    desc: "Best Seafood in San Francisco",
+  },
+  {
+    id: 4,
+    title: "The Top 10 most famous Indian dishes in the world are here",
+    subTitle:
+      "Podcasting on low-hanging fruit to identify a ballpark value added matrix economically and the creative activity to beta test override the food quality.",
+    src: "/blog/single/fruit.jpg",
+    desc: "Top 10 most famous Indian dishes",
+  },
+];
 
 export default async function BlogPosts() {
-  const posts = await fetchPosts();
-
   return (
     <section className="max-w-[1378px] py-[200px] mx-auto max-lg:py-[80px]">
       <article className="text-center max-w-[702px] mb-16 mx-auto px-9 max-md:mb-8">
