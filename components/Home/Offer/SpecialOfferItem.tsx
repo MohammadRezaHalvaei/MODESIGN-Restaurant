@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import XAnimation from "@/components/Animations/XAnimations";
+import HorizontalAnimation from "@/components/Animations/HorizontalAnimation";
 
 type SpecialOfferItemProps = {
   src: StaticImageData;
@@ -15,7 +15,7 @@ export default function SpecialOfferItem({
   bg,
 }: SpecialOfferItemProps) {
   return (
-    <XAnimation
+    <HorizontalAnimation
       delay={0.2}
       xAxis={-100}
       style={{
@@ -46,6 +46,6 @@ export default function SpecialOfferItem({
       </div>
 
       <Image src={src} alt={title} className="max-lg:mx-auto" />
-    </XAnimation>
+    </HorizontalAnimation>
   );
 }

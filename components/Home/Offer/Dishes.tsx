@@ -1,6 +1,6 @@
 import DishesItem from "./DishesItem";
 import Link from "next/link";
-import YAnimation from "@/components/Animations/YAnimation";
+import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 
 import dishOne from "@/public/home/offer/dishes/1.png";
 import dishTwo from "@/public/home/offer/dishes/2.png";
@@ -17,18 +17,18 @@ export default function Dishes() {
         max-xl:grid-cols-2 max-xl:gap-x-16 max-md:grid-cols-1 max-md:w-full"
       >
         {sources.map((src, index) => (
-          <YAnimation delay={0.2 * index} key={index} className="px-10">
+          <VerticalAnimation delay={0.2 * index} key={index} className="px-10">
             <DishesItem src={src} />
-          </YAnimation>
+          </VerticalAnimation>
         ))}
       </div>
       <Link href="/menu">
-        <YAnimation
+        <VerticalAnimation
           delay={0}
           className="btn-white text-[#E1B168] font-medium text-[22px] px-12 py-5"
         >
           See all dishes
-        </YAnimation>
+        </VerticalAnimation>
       </Link>
     </>
   );

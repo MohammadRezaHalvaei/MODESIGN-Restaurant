@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import SocialMedia from "../Header/SocialMedia";
-import XAnimation from "../Animations/XAnimations";
-import YAnimation from "../Animations/YAnimation";
+import HorizontalAnimation from "@/components/Animations/HorizontalAnimation";
+import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 
 import logo from "@/public/header/Logo.svg";
 
 export default function Footer() {
   return (
     <footer className="bg-[#1F242C] text-white flex flex-col gap-16">
-      <YAnimation
+      <VerticalAnimation
         delay={0.3}
         className="pt-[100px] grid grid-cols-3 items-center justify-items-center gap-16 px-4 max-md:grid-cols-1 max-md:pt-20"
       >
@@ -19,9 +19,9 @@ export default function Footer() {
         <Image src={logo} alt="logo" />
 
         <SocialMedia />
-      </YAnimation>
+      </VerticalAnimation>
 
-      <YAnimation
+      <VerticalAnimation
         delay={0.5}
         className="grid grid-cols-[0.5fr_1fr_0.5fr] items-center justify-center px-9
         max-lg:grid-cols-1 max-lg:gap-10"
@@ -79,12 +79,12 @@ export default function Footer() {
             </p>
           </div>
         </div>
-      </YAnimation>
+      </VerticalAnimation>
       <div
         className="flex justify-evenly py-[30px] border-t border-[#575B62] px-9
         max-lg:flex-col max-lg:gap-5 max-lg:items-center max-lg:px-4 max-lg:justify-center max-lg:py-5"
       >
-        <XAnimation
+        <HorizontalAnimation
           xAxis={-100}
           className="parag max-md:text-lg max-md:text-center"
         >
@@ -105,8 +105,10 @@ export default function Footer() {
           >
             Figma
           </Link>
-        </XAnimation>
-        <XAnimation className="parag">{new Date().getFullYear()}</XAnimation>
+        </HorizontalAnimation>
+        <HorizontalAnimation className="parag">
+          {new Date().getFullYear()}
+        </HorizontalAnimation>
       </div>
     </footer>
   );

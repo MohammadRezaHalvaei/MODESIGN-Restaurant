@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { Rate } from "antd";
 import Link from "next/link";
-import XAnimation from "../Animations/XAnimations";
-import YAnimation from "../Animations/YAnimation";
+import HorizontalAnimation from "@/components/Animations/HorizontalAnimation";
+import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 
 import aboutImg from "@/public/about/about-landing.png";
 import pattern from "@/public/about/landing-pattern.svg";
@@ -14,7 +14,7 @@ export default function About() {
       className="pt-[200px] pb-[296px] grid grid-cols-2 items-center px-10 max-lg:grid-cols-1 max-lg:gap-20
       max-w-[1378px] mx-auto max-lg:pt-[100px] max-lg:pb-[100px]"
     >
-      <XAnimation
+      <HorizontalAnimation
         xAxis={-100}
         delay={0.3}
         className="flex flex-col max-lg:items-center"
@@ -47,18 +47,18 @@ export default function About() {
         >
           See our Chefs
         </Link>
-      </XAnimation>
+      </HorizontalAnimation>
       <article className="relative mx-auto">
-        <XAnimation delay={0.3}>
+        <HorizontalAnimation delay={0.3}>
           <Image src={aboutImg} alt="About Landing" />
           <Image
             src={pattern}
             alt="About Pattern"
             className="absolute -right-20 -top-2 -z-10 rotating max-sm:hidden"
           />
-        </XAnimation>
+        </HorizontalAnimation>
 
-        <YAnimation
+        <VerticalAnimation
           className="absolute -bottom-24 -left-52 bg-white shadow-[0_0_14px_0_rgba(0,0,0,0.2)] max-w-[400px] 
           max-lg:left-0 max-lg:bottom-0"
         >
@@ -79,7 +79,7 @@ export default function About() {
             </p>
             <Rate disabled defaultValue={5} style={{ color: "#E1B168" }} />
           </div>
-        </YAnimation>
+        </VerticalAnimation>
       </article>
     </section>
   );

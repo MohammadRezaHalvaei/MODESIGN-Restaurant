@@ -2,7 +2,7 @@ import Image, { StaticImageData } from "next/image";
 import { ConfigProvider, Rate } from "antd";
 
 import pattern from "@/public/order/pattern.svg";
-import YAnimation from "../Animations/YAnimation";
+import VerticalAnimation from "../Animations/VerticalAnimation";
 
 type RecentlyItemsProps = {
   src: StaticImageData;
@@ -18,7 +18,7 @@ export default function RecentlyItems({
   dark = true,
 }: RecentlyItemsProps) {
   return (
-    <YAnimation delay={0.1} className="w-full">
+    <VerticalAnimation delay={0.1} className="w-full">
       <Image src={src} alt={title} className="max-md:w-full" />
       <div
         className={`${
@@ -53,6 +53,6 @@ export default function RecentlyItems({
           </div>
         </div>
       </div>
-    </YAnimation>
+    </VerticalAnimation>
   );
 }

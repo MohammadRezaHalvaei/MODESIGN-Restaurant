@@ -1,5 +1,5 @@
 import CountsItem from "./CountsItem";
-import YAnimation from "@/components/Animations/YAnimation";
+import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 
 import fresh from "@/public/about/counts/fresh.svg";
 import chef from "@/public/about/counts/chef.svg";
@@ -25,14 +25,14 @@ export default function Counts() {
     >
       <article className="grid grid-cols-4 max-xl:grid-cols-2 max-xl:gap-x-40 max-lg:grid-cols-1">
         {items.map((item, index) => (
-          <YAnimation delay={index * 0.2} key={item.title}>
+          <VerticalAnimation delay={index * 0.2} key={item.title}>
             <CountsItem
               src={item.src}
               title={item.title}
               isLastItem={item?.isLastItem}
               link={item.link}
             />
-          </YAnimation>
+          </VerticalAnimation>
         ))}
       </article>
     </section>

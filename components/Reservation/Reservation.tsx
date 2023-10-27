@@ -1,5 +1,5 @@
 import Image from "next/image";
-import XAnimation from "../Animations/XAnimations";
+import HorizontalAnimation from "../Animations/HorizontalAnimation";
 import OpacityAnimation from "../Animations/OpacityAnimation";
 
 import reserve from "@/public/reservation/reserved.jpg";
@@ -10,7 +10,7 @@ export default function Reservation() {
       className="py-[200px] max-w-[1378px] mx-auto grid grid-cols-2 items-center gap-10 justify-items-center mb-3.5 px-10
       max-lg:py-20 max-sm:pb-0 max-lg:grid-cols-1 max-lg:gap-20 max-md:px-6"
     >
-      <XAnimation delay={0.2} xAxis={-100}>
+      <HorizontalAnimation delay={0.2} xAxis={-100}>
         <div className="flex flex-col gap-5 text-[#292E36] mb-3.5">
           <p
             className="font-josephin font-medium text-[15px] w-fit 
@@ -58,7 +58,7 @@ export default function Reservation() {
         >
           Book a Table
         </button>
-      </XAnimation>
+      </HorizontalAnimation>
 
       <OpacityAnimation delay={0.2}>
         <Image src={reserve} alt="Reserved" className="max-lg:w-full" />

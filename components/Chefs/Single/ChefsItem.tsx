@@ -1,8 +1,8 @@
 import Image from "next/image";
 import ContactItem from "./ContactItem";
 import OpacityAnimation from "@/components/Animations/OpacityAnimation";
-import XAnimation from "@/components/Animations/XAnimations";
-import YAnimation from "@/components/Animations/YAnimation";
+import HorizontalAnimation from "@/components/Animations/HorizontalAnimation";
+import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 
 import call from "@/public/chefs/single/Call.svg";
 import exp from "@/public/chefs/single/exp.svg";
@@ -44,7 +44,7 @@ export default function ChefsItem({ data }: { data: FetchDataType }) {
       </OpacityAnimation>
 
       <article>
-        <XAnimation delay={0.3}>
+        <HorizontalAnimation delay={0.3}>
           <h4 className="h4-title text-[#292E36] mb-4">{data?.name}</h4>
           <h6 className="font-josephin text-[#E1B168] text-[25px] leading-[31.62px] font-normal mb-4">
             {data?.role}
@@ -55,24 +55,24 @@ export default function ChefsItem({ data }: { data: FetchDataType }) {
             clickthroughs from Nanotechnology immersion along the information
             highway will close the loop on focusing solely the bottom line.
           </p>
-        </XAnimation>
+        </HorizontalAnimation>
 
         <div className="grid grid-cols-2 gap-x-[108px] gap-y-12 mb-14">
           {details.map((detail, index) => (
-            <XAnimation delay={index * 0.15} key={detail.title}>
+            <HorizontalAnimation delay={index * 0.15} key={detail.title}>
               <ContactItem
                 src={detail.src}
                 text={detail.text}
                 title={detail.title}
               />
-            </XAnimation>
+            </HorizontalAnimation>
           ))}
         </div>
         <div className="flex gap-4">
           {socials.map((social, index) => (
-            <YAnimation delay={index * 0.15} key={social.alt}>
+            <VerticalAnimation delay={index * 0.15} key={social.alt}>
               <Image src={social.src} alt={social.alt} />
-            </YAnimation>
+            </VerticalAnimation>
           ))}
         </div>
       </article>

@@ -1,7 +1,7 @@
 import AppsItem from "./AppsItem";
 import Link from "next/link";
 import OpacityAnimation from "../Animations/OpacityAnimation";
-import YAnimation from "../Animations/YAnimation";
+import VerticalAnimation from "../Animations/VerticalAnimation";
 
 import delicious from "@/public/order/delicious.svg";
 import foodDelivery from "@/public/order/food delivery.svg";
@@ -45,13 +45,13 @@ export default function Apps() {
         ))}
       </article>
       <Link href="order/app">
-        <YAnimation
+        <VerticalAnimation
           delay={0}
           className="btn-white px-12 py-5 text-[#E1B168] text-[22px] leading-[27.83px]
           max-md:px-8 max-md:py-3 max-md:text-base"
         >
           Order Now
-        </YAnimation>
+        </VerticalAnimation>
       </Link>
     </section>
   );

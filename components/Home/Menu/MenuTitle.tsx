@@ -2,14 +2,14 @@ import Image from "next/image";
 import menuImage from "@/public/home/Menu.jpg";
 import Link from "next/link";
 import OpacityAnimation from "@/components/Animations/OpacityAnimation";
-import YAnimation from "@/components/Animations/YAnimation";
+import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 
 export default function MenuTitle() {
   return (
     <article
       className={`flex flex-col gap-[60px] max-sm:gap-8 lg:sticky top-[4%] h-fit px-4`}
     >
-      <YAnimation
+      <VerticalAnimation
         delay={0}
         className="flex flex-col gap-[22px] max-lg:text-center max-lg:px-6"
       >
@@ -29,19 +29,19 @@ export default function MenuTitle() {
           letters, as opposed to using &apos;Content here, content making it
           look like readable English.
         </p>
-      </YAnimation>
+      </VerticalAnimation>
       <OpacityAnimation delay={0} className="flex justify-center">
         <Image src={menuImage} alt="menu" className="max-lg:w-[80%]" />
       </OpacityAnimation>
 
       <Link href="/menu" className="max-lg:mx-auto">
-        <YAnimation
+        <VerticalAnimation
           delay={0}
           className="btn-white text-[#E1B168] font-josephin 
           text-[22px] leading-[27.83px] px-12 py-5 w-fit"
         >
           See all dishes
-        </YAnimation>
+        </VerticalAnimation>
       </Link>
     </article>
   );

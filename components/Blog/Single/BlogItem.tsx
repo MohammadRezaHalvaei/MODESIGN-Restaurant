@@ -1,13 +1,13 @@
 import Image from "next/image";
-import XAnimation from "@/components/Animations/XAnimations";
-import YAnimation from "@/components/Animations/YAnimation";
+import HorizontalAnimation from "@/components/Animations/HorizontalAnimation";
+import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 
 export default function BlogItem({ data }: { data: Posts }) {
   return (
     <>
       <section>
         <article className="text-center text-[#292E36] max-w-[780px] mx-auto mb-[60px] max-lg:mb-8">
-          <XAnimation
+          <HorizontalAnimation
             delay={0}
             className="font-josephin font-medium text-[15px] w-fit mb-3
             leading-[11.57px] tracking-[0.2em] flex gap-5 mx-auto"
@@ -19,8 +19,8 @@ export default function BlogItem({ data }: { data: Posts }) {
             <span className="border-t border-b border-[#E1B168] py-1.5">
               FEB 22, 2022
             </span>
-          </XAnimation>
-          <YAnimation delay={0}>
+          </HorizontalAnimation>
+          <VerticalAnimation delay={0}>
             <h2 className="h2-title mb-2.5 max-lg:text-4xl max-sm:text-2xl">
               {data?.title}
             </h2>
@@ -28,7 +28,7 @@ export default function BlogItem({ data }: { data: Posts }) {
             <p className="parag text-[#555555] max-lg:text-lg max-sm:text-base">
               {data?.subTitle}
             </p>
-          </YAnimation>
+          </VerticalAnimation>
         </article>
         <article className="mb-10">
           <Image
@@ -38,7 +38,7 @@ export default function BlogItem({ data }: { data: Posts }) {
             height={612}
             width={1320}
           />
-          <YAnimation
+          <VerticalAnimation
             delay={0.3}
             className="parag text-[#555555] max-w-[900px] mx-auto max-lg:text-lg max-sm:text-base"
           >
@@ -48,10 +48,10 @@ export default function BlogItem({ data }: { data: Posts }) {
             manufactured products via client-focused results quickly communicate
             enabled technology and turnkey leadership skills. Uniquely enable
             accurate supply chains rather than friction technology.
-          </YAnimation>
+          </VerticalAnimation>
         </article>
       </section>
-      <YAnimation delay={0.3} className="max-w-[900px] mx-auto">
+      <VerticalAnimation delay={0.3} className="max-w-[900px] mx-auto">
         <article className="flex flex-col gap-[18px]">
           <h4 className="font-cormorant text-4xl leading-[42px] text-[#292E36] max-md:text-2xl">
             Perfect Food for all Hungry Livings
@@ -108,7 +108,7 @@ export default function BlogItem({ data }: { data: Posts }) {
             </li>
           </ol>
         </article>
-      </YAnimation>
+      </VerticalAnimation>
     </>
   );
 }

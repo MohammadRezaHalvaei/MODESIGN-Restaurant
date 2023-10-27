@@ -1,5 +1,5 @@
 import ChefsItem from "./ChefsItem";
-import YAnimation from "@/components/Animations/YAnimation";
+import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 
 import avroko from "@/public/about/team/Avroko.png";
 import evan from "@/public/about/team/Evan Mattew.png";
@@ -43,14 +43,14 @@ export default function Team() {
         max-xl:grid-cols-2 max-md:grid-cols-1 max-md:gap-10"
       >
         {chefs.map((chef) => (
-          <YAnimation delay={0.3} key={chef.name}>
+          <VerticalAnimation delay={0.3} key={chef.name}>
             <ChefsItem
               link={chef.link}
               src={chef.src}
               name={chef.name}
               role={chef.role}
             />
-          </YAnimation>
+          </VerticalAnimation>
         ))}
       </article>
     </section>

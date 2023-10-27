@@ -1,10 +1,10 @@
 import Link from "next/link";
-import XAnimation from "../Animations/XAnimations";
+import HorizontalAnimation from "@/components/Animations/HorizontalAnimation";
 
 export default function Reservation() {
   return (
     <section className="bg-[url('/gallery/reservation.jpg')] max-h-[560px] pl-10 max-sm:pl-0">
-      <XAnimation
+      <HorizontalAnimation
         xAxis={-100}
         delay={0.2}
         className="max-w-[1378px] text-white mx-auto py-[92px]"
@@ -32,7 +32,7 @@ export default function Reservation() {
             Book a Table
           </Link>
         </div>
-      </XAnimation>
+      </HorizontalAnimation>
     </section>
   );
 }

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import XAnimation from "@/components/Animations/XAnimations";
-import YAnimation from "@/components/Animations/YAnimation";
+import HorizontalAnimation from "@/components/Animations/HorizontalAnimation";
+import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 
 type BlogCardTypes = {
   src: string;
@@ -12,7 +12,7 @@ type BlogCardTypes = {
 
 export default function BlogCard({ src, title, text, link }: BlogCardTypes) {
   return (
-    <YAnimation delay={0.3} className="group grid auto-rows-auto">
+    <VerticalAnimation delay={0.3} className="group grid auto-rows-auto">
       <div className="relative">
         <Image
           src={src}
@@ -42,19 +42,19 @@ export default function BlogCard({ src, title, text, link }: BlogCardTypes) {
           className="font-josephin font-medium text-[15px] w-fit max-lg:text-xs max-lg:gap-3
             leading-[11.57px] tracking-[0.2em] flex gap-5 max-lg:flex-col"
         >
-          <XAnimation
+          <HorizontalAnimation
             delay={0.3}
             className="border-t border-b border-[#E1B168] py-1.5"
           >
             RESTAURANTS
-          </XAnimation>
+          </HorizontalAnimation>
 
-          <XAnimation
+          <HorizontalAnimation
             delay={0.6}
             className="border-t border-b border-[#E1B168] py-1.5"
           >
             FEB 22, 2022
-          </XAnimation>
+          </HorizontalAnimation>
         </div>
 
         <Link
@@ -67,6 +67,6 @@ export default function BlogCard({ src, title, text, link }: BlogCardTypes) {
 
         <p className="parag text-[#555555] max-lg:text-lg">{text}</p>
       </div>
-    </YAnimation>
+    </VerticalAnimation>
   );
 }

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import YAnimation from "@/components/Animations/YAnimation";
+import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 
 import appImage from "@/public/order/single/App logo.svg";
 import pattern from "@/public/order/single/pattern.png";
@@ -36,14 +36,14 @@ export default function AppBrief() {
               innovation rather than client-centric data.
             </p>
           </div>
-          <YAnimation delay={0.3} className="flex gap-[30px]">
+          <VerticalAnimation delay={0.3} className="flex gap-[30px]">
             <Link href="https://apple.com">
               <Image src={apple} alt="Apple Store" className="max-h-[61px]" />
             </Link>
             <Link href="https://google.com">
               <Image src={google} alt="Google Play" className="max-h-[61px]" />
             </Link>
-          </YAnimation>
+          </VerticalAnimation>
         </div>
         <Image
           src={pattern}

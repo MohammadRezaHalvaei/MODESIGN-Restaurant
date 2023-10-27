@@ -1,8 +1,8 @@
 import Image from "next/image";
 import ChooseItem from "./ChooseItem";
 import OpacityAnimation from "../Animations/OpacityAnimation";
-import XAnimation from "../Animations/XAnimations";
-import YAnimation from "../Animations/YAnimation";
+import HorizontalAnimation from "../Animations/HorizontalAnimation";
+import VerticalAnimation from "../Animations/VerticalAnimation";
 
 import choose from "@/public/reservation/bestchoose.jpg";
 import fresh from "@/public/reservation/fresh.svg";
@@ -27,7 +27,10 @@ export default function Choose() {
         <Image src={choose} alt="Best Choose" className="h-full" />
       </OpacityAnimation>
       <article className="pl-[52px] max-lg:pl-0">
-        <XAnimation delay={0.2} className="flex flex-col gap-3 text-[#292E36]">
+        <HorizontalAnimation
+          delay={0.2}
+          className="flex flex-col gap-3 text-[#292E36]"
+        >
           <p
             className="font-josephin font-medium text-[15px] w-fit 
             leading-[11.57px] border-t border-b border-[#E1B168] py-1.5 tracking-[0.2em]"
@@ -44,13 +47,13 @@ export default function Choose() {
             cloud solution generated content in real times will have multiple
             touchpoints.
           </p>
-        </XAnimation>
+        </HorizontalAnimation>
 
         <div className="grid grid-cols-2 gap-7 max-md:grid-cols-1">
           {items.map((item, index) => (
-            <YAnimation delay={index * 0.2} key={item.title}>
+            <VerticalAnimation delay={index * 0.2} key={item.title}>
               <ChooseItem src={item.src} title={item.title} />
-            </YAnimation>
+            </VerticalAnimation>
           ))}
         </div>
       </article>

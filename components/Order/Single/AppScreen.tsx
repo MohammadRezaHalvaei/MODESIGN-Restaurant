@@ -1,5 +1,5 @@
 import Image from "next/image";
-import YAnimation from "@/components/Animations/YAnimation";
+import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 
 import appOne from "@/public/order/single/app-1.png";
 import appTwo from "@/public/order/single/app-2.png";
@@ -26,13 +26,13 @@ export default function AppScreen() {
         </div>
         <div className="grid grid-cols-3 gap-12 max-md:grid-cols-1">
           {images.map((image, index) => (
-            <YAnimation delay={index * 0.2} key={image.alt}>
+            <VerticalAnimation delay={index * 0.2} key={image.alt}>
               <Image
                 src={image.src}
                 alt={image.alt}
                 className="max-md:w-full"
               />
-            </YAnimation>
+            </VerticalAnimation>
           ))}
         </div>
       </div>

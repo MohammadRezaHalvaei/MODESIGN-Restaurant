@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
-import YAnimation from "@/components/Animations/YAnimation";
+import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 
 import play from "@/public/chefs/single/video/play.svg";
 import poster from "@/public/chefs/single/video/video.jpg";
@@ -41,7 +41,7 @@ export default function Video() {
         className="absolute -bottom-40
         w-[900px] h-[527px] flex items-center justify-center"
       >
-        <YAnimation delay={0.1} className="relative group">
+        <VerticalAnimation delay={0.1} className="relative group">
           <button
             className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50
             border rounded-full pt-8 pb-8 pr-9 pl-9 hover:bg-[#E1B168] dur-200 
@@ -65,7 +65,7 @@ export default function Video() {
           >
             <source src="/chefs/single/video/video.mp4" />
           </video>
-        </YAnimation>
+        </VerticalAnimation>
       </div>
     </section>
   );

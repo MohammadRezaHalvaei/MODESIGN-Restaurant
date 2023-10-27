@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import patternImage from "@/public/home/menu/Pattern.svg";
-import XAnimation from "@/components/Animations/XAnimations";
+import HorizontalAnimation from "@/components/Animations/HorizontalAnimation";
 
 type Item = {
   src: StaticImageData;
@@ -20,7 +20,7 @@ export default function StarterItem({ title, items }: StarterItemProps) {
       <h4 className="h4-title text-[#292E36]">{title}</h4>
       <div className="flex flex-col gap-[30px] max-sm:gap-1">
         {items.map((item, index) => (
-          <XAnimation
+          <HorizontalAnimation
             delay={index * 0.15}
             className="flex gap-4 items-center"
             key={item.alt}
@@ -42,7 +42,7 @@ export default function StarterItem({ title, items }: StarterItemProps) {
                 </span>
               </p>
             </div>
-          </XAnimation>
+          </HorizontalAnimation>
         ))}
       </div>
     </div>

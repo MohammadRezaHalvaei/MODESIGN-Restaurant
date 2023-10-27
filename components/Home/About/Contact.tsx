@@ -1,5 +1,5 @@
 import ContactItem from "./ContactItem";
-import YAnimation from "@/components/Animations/YAnimation";
+import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 
 import location from "@/public/home/icons/Location.svg";
 import openHours from "@/public/home/icons/Hours.svg";
@@ -28,7 +28,7 @@ const contactDetails = [
 
 export default function Contact() {
   return (
-    <YAnimation
+    <VerticalAnimation
       delay={0}
       className="grid grid-cols-3 gap-16  mb-36 max-xl:grid-cols-2 px-5 max-lg:grid-cols-1"
     >
@@ -41,6 +41,6 @@ export default function Contact() {
           text={contact.text}
         />
       ))}
-    </YAnimation>
+    </VerticalAnimation>
   );
 }

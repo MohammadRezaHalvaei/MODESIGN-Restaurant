@@ -1,5 +1,5 @@
-import XAnimation from "@/components/Animations/XAnimations";
-import YAnimation from "@/components/Animations/YAnimation";
+import HorizontalAnimation from "@/components/Animations/HorizontalAnimation";
+import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 
 export default function StoryContent() {
   return (
@@ -19,7 +19,7 @@ export default function StoryContent() {
 
       <div className="flex gap-10 max-sm:gap-5">
         {["1996", "2021"].map((year, index) => (
-          <XAnimation
+          <HorizontalAnimation
             delay={index * 0.1}
             key={year}
             className="flex flex-col gap-5 max-sm:gap-2"
@@ -28,16 +28,16 @@ export default function StoryContent() {
             <p className="parag max-sm:text-base">
               Lorem Ipsum is that it has a more-or-less normal distribution
             </p>
-          </XAnimation>
+          </HorizontalAnimation>
         ))}
       </div>
 
-      <YAnimation delay={0.3} className="flex flex-col gap-8">
+      <VerticalAnimation delay={0.3} className="flex flex-col gap-8">
         <p className="parag max-sm:text-base">JOSEFINE</p>
         <p className="font-cervantis text-5xl leading-[63.25px] text-[#292E36] max-sm:text-4xl">
           Josefine
         </p>
-      </YAnimation>
+      </VerticalAnimation>
     </div>
   );
 }

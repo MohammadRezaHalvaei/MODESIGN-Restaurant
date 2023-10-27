@@ -3,7 +3,7 @@ import ServicesItem from "./ServicesItem";
 import openedHoursImage from "@/public/home/services/time.svg";
 import menuImage from "@/public/home/services/menu.svg";
 import deliveryImage from "@/public/home/services/delivery.svg";
-import XAnimation from "@/components/Animations/XAnimations";
+import HorizontalAnimation from "@/components/Animations/HorizontalAnimation";
 
 const services = [
   { src: openedHoursImage, title: "Opened 24/7" },
@@ -34,9 +34,9 @@ export default function Services() {
       </div>
       <div className="grid grid-cols-3 gap-6 max-md:grid-cols-1 max-md:w-full">
         {services.map((service, index) => (
-          <XAnimation delay={index * 0.15} key={service.title}>
+          <HorizontalAnimation delay={index * 0.15} key={service.title}>
             <ServicesItem src={service.src} title={service.title} />
-          </XAnimation>
+          </HorizontalAnimation>
         ))}
       </div>
     </section>
