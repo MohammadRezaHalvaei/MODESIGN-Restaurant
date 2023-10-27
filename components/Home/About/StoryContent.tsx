@@ -1,6 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
+import XAnimation from "@/components/Animations/XAnimations";
+import YAnimation from "@/components/Animations/YAnimation";
 
 export default function StoryContent() {
   return (
@@ -20,11 +19,8 @@ export default function StoryContent() {
 
       <div className="flex gap-10 max-sm:gap-5">
         {["1996", "2021"].map((year, index) => (
-          <motion.div
-            initial={{ x: 100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
+          <XAnimation
+            delay={index * 0.1}
             key={year}
             className="flex flex-col gap-5 max-sm:gap-2"
           >
@@ -32,22 +28,16 @@ export default function StoryContent() {
             <p className="parag max-sm:text-base">
               Lorem Ipsum is that it has a more-or-less normal distribution
             </p>
-          </motion.div>
+          </XAnimation>
         ))}
       </div>
 
-      <motion.div
-        initial={{ y: 100, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        viewport={{ once: true }}
-        className="flex flex-col gap-8"
-      >
+      <YAnimation delay={0.3} className="flex flex-col gap-8">
         <p className="parag max-sm:text-base">JOSEFINE</p>
         <p className="font-cervantis text-5xl leading-[63.25px] text-[#292E36] max-sm:text-4xl">
           Josefine
         </p>
-      </motion.div>
+      </YAnimation>
     </div>
   );
 }

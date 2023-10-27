@@ -1,8 +1,5 @@
-"use client";
-
-import Image from "next/image";
 import CountsItem from "./CountsItem";
-import { motion } from "framer-motion";
+import YAnimation from "@/components/Animations/YAnimation";
 
 import fresh from "@/public/about/counts/fresh.svg";
 import chef from "@/public/about/counts/chef.svg";
@@ -28,20 +25,14 @@ export default function Counts() {
     >
       <article className="grid grid-cols-4 max-xl:grid-cols-2 max-xl:gap-x-40 max-lg:grid-cols-1">
         {items.map((item, index) => (
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-            viewport={{ once: true }}
-            key={item.title}
-          >
+          <YAnimation delay={index * 0.2} key={item.title}>
             <CountsItem
               src={item.src}
               title={item.title}
               isLastItem={item?.isLastItem}
               link={item.link}
             />
-          </motion.div>
+          </YAnimation>
         ))}
       </article>
     </section>

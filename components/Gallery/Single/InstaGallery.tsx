@@ -1,7 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
+import OpacityAnimation from "@/components/Animations/OpacityAnimation";
 
 import imgOne from "@/public/gallery/single/01.png";
 import imgTwo from "@/public/gallery/single/02.png";
@@ -23,11 +21,8 @@ export default function InstaGallery() {
 
         <h4 className="h4-title max-sm:text-3xl">Instagram Gallery</h4>
       </div>
-      <motion.article
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        viewport={{ once: true }}
+      <OpacityAnimation
+        delay={0.6}
         className="grid grid-cols-6 justify-items-center gap-10 items-center max-w-[1600px] mx-auto
         max-lg:grid-cols-3 max-sm:grid-cols-1"
       >
@@ -37,7 +32,7 @@ export default function InstaGallery() {
         <Image src={imgFour} alt="Instagram" className="max-sm:w-full" />
         <Image src={imgFifth} alt="Instagram" className="max-sm:w-full" />
         <Image src={imgSix} alt="Instagram" className="max-sm:w-full" />
-      </motion.article>
+      </OpacityAnimation>
     </section>
   );
 }

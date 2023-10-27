@@ -1,11 +1,9 @@
-"use client";
-
 import ServicesItem from "./ServicesItem";
-import { motion } from "framer-motion";
 
 import openedHoursImage from "@/public/home/services/time.svg";
 import menuImage from "@/public/home/services/menu.svg";
 import deliveryImage from "@/public/home/services/delivery.svg";
+import XAnimation from "@/components/Animations/XAnimations";
 
 const services = [
   { src: openedHoursImage, title: "Opened 24/7" },
@@ -36,15 +34,9 @@ export default function Services() {
       </div>
       <div className="grid grid-cols-3 gap-6 max-md:grid-cols-1 max-md:w-full">
         {services.map((service, index) => (
-          <motion.div
-            key={service.title}
-            initial={{ x: 100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.15 }}
-            viewport={{ once: true }}
-          >
+          <XAnimation delay={index * 0.15} key={service.title}>
             <ServicesItem src={service.src} title={service.title} />
-          </motion.div>
+          </XAnimation>
         ))}
       </div>
     </section>

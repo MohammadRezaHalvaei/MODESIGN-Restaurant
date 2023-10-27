@@ -1,10 +1,8 @@
-"use client";
-
 import Image, { StaticImageData } from "next/image";
 import { ConfigProvider, Rate } from "antd";
-import { motion } from "framer-motion";
 
 import pattern from "@/public/order/pattern.svg";
+import YAnimation from "../Animations/YAnimation";
 
 type RecentlyItemsProps = {
   src: StaticImageData;
@@ -20,13 +18,7 @@ export default function RecentlyItems({
   dark = true,
 }: RecentlyItemsProps) {
   return (
-    <motion.div
-      initial={{ y: 100, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.1 }}
-      viewport={{ once: true }}
-      className="w-full"
-    >
+    <YAnimation delay={0.1} className="w-full">
       <Image src={src} alt={title} className="max-md:w-full" />
       <div
         className={`${
@@ -61,6 +53,6 @@ export default function RecentlyItems({
           </div>
         </div>
       </div>
-    </motion.div>
+    </YAnimation>
   );
 }

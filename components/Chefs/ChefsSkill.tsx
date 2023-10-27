@@ -1,8 +1,7 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { Progress } from "antd";
+import OpacityAnimation from "../Animations/OpacityAnimation";
+import YAnimation from "../Animations/YAnimation";
 
 import skilled from "@/public/chefs/Skilled.jpg";
 import Link from "next/link";
@@ -19,13 +18,7 @@ export default function ChefsSkill() {
       className="py-[200px] max-w-[1378px] grid grid-cols-2 mx-auto gap-[52px] max-lg:py-24 px-10 
       max-md:px-6 max-lg:grid-cols-1"
     >
-      <motion.article
-        initial={{ y: 100, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        viewport={{ once: true }}
-        className="flex flex-col gap-[70px] max-md:gap-9"
-      >
+      <YAnimation delay={0.1} className="flex flex-col gap-[70px] max-md:gap-9">
         <div className="text-[#292E36]">
           <p
             className="font-josephin font-medium text-[15px] w-fit mb-3
@@ -67,15 +60,10 @@ export default function ChefsSkill() {
         >
           See all dishes
         </Link>
-      </motion.article>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
+      </YAnimation>
+      <OpacityAnimation delay={0.2}>
         <Image alt="Skilled Chef" src={skilled} className="h-full" />
-      </motion.div>
+      </OpacityAnimation>
     </section>
   );
 }

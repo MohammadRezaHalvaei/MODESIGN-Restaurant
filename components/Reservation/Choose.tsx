@@ -1,8 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import ChooseItem from "./ChooseItem";
-import { motion } from "framer-motion";
+import OpacityAnimation from "../Animations/OpacityAnimation";
+import XAnimation from "../Animations/XAnimations";
+import YAnimation from "../Animations/YAnimation";
 
 import choose from "@/public/reservation/bestchoose.jpg";
 import fresh from "@/public/reservation/fresh.svg";
@@ -23,22 +23,11 @@ export default function Choose() {
       className="py-[200px] max-w-[1378px] mx-auto grid grid-cols-2 px-10 items-center justify-items-center 
       max-lg:flex max-lg:flex-col-reverse max-lg:gap-14 max-md:px-6 max-lg:py-24"
     >
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
+      <OpacityAnimation delay={0.2}>
         <Image src={choose} alt="Best Choose" className="h-full" />
-      </motion.div>
+      </OpacityAnimation>
       <article className="pl-[52px] max-lg:pl-0">
-        <motion.div
-          initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="flex flex-col gap-3 text-[#292E36]"
-        >
+        <XAnimation delay={0.2} className="flex flex-col gap-3 text-[#292E36]">
           <p
             className="font-josephin font-medium text-[15px] w-fit 
             leading-[11.57px] border-t border-b border-[#E1B168] py-1.5 tracking-[0.2em]"
@@ -55,19 +44,13 @@ export default function Choose() {
             cloud solution generated content in real times will have multiple
             touchpoints.
           </p>
-        </motion.div>
+        </XAnimation>
 
         <div className="grid grid-cols-2 gap-7 max-md:grid-cols-1">
           {items.map((item, index) => (
-            <motion.div
-              key={item.title}
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              viewport={{ once: true }}
-            >
+            <YAnimation delay={index * 0.2} key={item.title}>
               <ChooseItem src={item.src} title={item.title} />
-            </motion.div>
+            </YAnimation>
           ))}
         </div>
       </article>

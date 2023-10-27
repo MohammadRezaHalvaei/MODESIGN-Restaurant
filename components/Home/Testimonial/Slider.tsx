@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
+import SliderItem from "./SliderItem";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -10,7 +11,6 @@ import "swiper/css/pagination";
 import daniyalImg from "@/public/home/testimonial/Daniyal.png";
 import NatashaImg from "@/public/home/testimonial/Natasha.png";
 import jackImg from "@/public/home/testimonial/Jack.png";
-import SliderItem from "./SliderItem";
 
 const persons = [
   {

@@ -1,8 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import FeatureText from "./FeatureText";
-import { motion } from "framer-motion";
+import OpacityAnimation from "../Animations/OpacityAnimation";
 
 import invite from "@/public/gallery/invite.jpg";
 import fresh from "@/public/gallery/fresh.jpg";
@@ -27,22 +25,15 @@ export default function Feature() {
           text={features[0].text}
           className="pr-20 max-xl:pr-0"
         />
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
+
+        <OpacityAnimation delay={0.2}>
           <Image src={fresh} alt="Always Fresh" className="max-xl:w-full" />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
+        </OpacityAnimation>
+
+        <OpacityAnimation delay={0.4}>
           <Image src={invite} alt="Invite" className="max-xl:w-full" />
-        </motion.div>
+        </OpacityAnimation>
+
         <FeatureText
           title={features[1].title}
           text={features[1].text}

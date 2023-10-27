@@ -1,8 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import ContactItem from "./ContactItem";
-import { motion } from "framer-motion";
+import OpacityAnimation from "@/components/Animations/OpacityAnimation";
+import XAnimation from "@/components/Animations/XAnimations";
+import YAnimation from "@/components/Animations/YAnimation";
 
 import call from "@/public/chefs/single/Call.svg";
 import exp from "@/public/chefs/single/exp.svg";
@@ -39,21 +39,12 @@ export default function ChefsItem({ data }: { data: FetchDataType }) {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
+      <OpacityAnimation delay={0.2}>
         <Image src={data!.img} alt="Chef Image" width={542} height={670} />
-      </motion.div>
+      </OpacityAnimation>
+
       <article>
-        <motion.div
-          initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
+        <XAnimation delay={0.3}>
           <h4 className="h4-title text-[#292E36] mb-4">{data?.name}</h4>
           <h6 className="font-josephin text-[#E1B168] text-[25px] leading-[31.62px] font-normal mb-4">
             {data?.role}
@@ -64,35 +55,24 @@ export default function ChefsItem({ data }: { data: FetchDataType }) {
             clickthroughs from Nanotechnology immersion along the information
             highway will close the loop on focusing solely the bottom line.
           </p>
-        </motion.div>
+        </XAnimation>
+
         <div className="grid grid-cols-2 gap-x-[108px] gap-y-12 mb-14">
           {details.map((detail, index) => (
-            <motion.div
-              initial={{ x: 100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              viewport={{ once: true }}
-              key={detail.title}
-            >
+            <XAnimation delay={index * 0.15} key={detail.title}>
               <ContactItem
                 src={detail.src}
                 text={detail.text}
                 title={detail.title}
               />
-            </motion.div>
+            </XAnimation>
           ))}
         </div>
         <div className="flex gap-4">
           {socials.map((social, index) => (
-            <motion.div
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              viewport={{ once: true }}
-              key={social.alt}
-            >
+            <YAnimation delay={index * 0.15} key={social.alt}>
               <Image src={social.src} alt={social.alt} />
-            </motion.div>
+            </YAnimation>
           ))}
         </div>
       </article>

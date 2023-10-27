@@ -1,8 +1,6 @@
-"use client";
-
 import Image, { StaticImageData } from "next/image";
 import patternImage from "@/public/home/menu/Pattern.svg";
-import { motion } from "framer-motion";
+import XAnimation from "@/components/Animations/XAnimations";
 
 type Item = {
   src: StaticImageData;
@@ -22,11 +20,8 @@ export default function StarterItem({ title, items }: StarterItemProps) {
       <h4 className="h4-title text-[#292E36]">{title}</h4>
       <div className="flex flex-col gap-[30px] max-sm:gap-1">
         {items.map((item, index) => (
-          <motion.div
-            initial={{ x: 100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.15 }}
-            viewport={{ once: true }}
+          <XAnimation
+            delay={index * 0.15}
             className="flex gap-4 items-center"
             key={item.alt}
           >
@@ -47,7 +42,7 @@ export default function StarterItem({ title, items }: StarterItemProps) {
                 </span>
               </p>
             </div>
-          </motion.div>
+          </XAnimation>
         ))}
       </div>
     </div>

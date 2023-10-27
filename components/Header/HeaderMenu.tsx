@@ -3,68 +3,9 @@
 import Link from "next/link";
 import SocialMedia from "./SocialMedia";
 import { MenuOutlined } from "@ant-design/icons";
+import { useSelectedLayoutSegment } from "next/navigation";
 import { Dropdown } from "antd";
 import type { MenuProps } from "antd";
-import { useSelectedLayoutSegment } from "next/navigation";
-
-const items: MenuProps["items"] = [
-  {
-    key: "1",
-    label: (
-      <Link className="hover-gold" href="/">
-        Homes
-      </Link>
-    ),
-  },
-  {
-    key: "2",
-    label: (
-      <Link className="hover-gold" href="/about">
-        About
-      </Link>
-    ),
-  },
-  {
-    key: "3",
-    label: (
-      <Link className="hover-gold" href="/menu">
-        Menu
-      </Link>
-    ),
-  },
-  {
-    key: "4",
-    label: (
-      <Link className="hover-gold" href="/reservation">
-        Reservation
-      </Link>
-    ),
-  },
-  {
-    key: "5",
-    label: (
-      <Link className="hover-gold" href="/gallery">
-        Gallery
-      </Link>
-    ),
-  },
-  {
-    key: "6",
-    label: (
-      <Link className="hover-gold" href="/blog">
-        Blog
-      </Link>
-    ),
-  },
-  {
-    key: "7",
-    label: (
-      <Link className="hover-gold" href="/contact">
-        Contact
-      </Link>
-    ),
-  },
-];
 
 const links = [
   { label: "Homes", link: "/", target: null },
@@ -75,6 +16,15 @@ const links = [
   { label: "Blog", link: "/blog", target: "blog" },
   { label: "Contact", link: "/contact", target: "contact" },
 ];
+
+const items: MenuProps["items"] = links!.map((link, index) => ({
+  key: (index + 1).toString(),
+  label: (
+    <Link className="hover-gold" href={link?.link}>
+      {link?.label}
+    </Link>
+  ),
+}));
 
 export default function HeaderMenu() {
   const activeSegment = useSelectedLayoutSegment();

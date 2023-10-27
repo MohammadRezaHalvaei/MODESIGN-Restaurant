@@ -1,16 +1,11 @@
-"use client";
-
+import OpacityAnimation from "@/components/Animations/OpacityAnimation";
 import ReservationForm from "@/components/Footer/ReservationForm";
-import { motion } from "framer-motion";
 
 export default function TableBook() {
   return (
     <section className="bg-[#1F242C]">
-      <motion.article
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        viewport={{ once: true }}
+      <OpacityAnimation
+        delay={0.6}
         className="max-w-[1378px] mx-auto py-20 px-10"
       >
         <div className="flex flex-col items-center justify-center border border-[#858585] py-24 max-md:py-12">
@@ -26,7 +21,7 @@ export default function TableBook() {
           </div>
           <ReservationForm />
         </div>
-      </motion.article>
+      </OpacityAnimation>
     </section>
   );
 }

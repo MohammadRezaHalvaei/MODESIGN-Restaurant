@@ -1,10 +1,9 @@
-"use client";
-
 import Image from "next/image";
+import Link from "next/link";
+import OpacityAnimation from "../Animations/OpacityAnimation";
+
 import landingPic from "@/public/header/Landing.png";
 import pattern from "@/public/header/Pattern.svg";
-import { motion } from "framer-motion";
-import Link from "next/link";
 
 export default function HeaderChildren() {
   return (
@@ -13,11 +12,8 @@ export default function HeaderChildren() {
         className="grid grid-cols-2 mx-auto max-w-screen-2xl relative overflow-hidden
         max-xl:grid-cols-1"
       >
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+        <OpacityAnimation
+          delay={0}
           className="flex py-[192.3px] flex-col text-white gap-8 max-w-[600px] pl-10
           max-xl:mx-auto max-xl:text-center max-xl:mb-[800px] max-xl:max-w-full max-xl:px-10 max-xl:pt-20
           max-sm:mb-0 max-sm:pb-10"
@@ -35,20 +31,15 @@ export default function HeaderChildren() {
           >
             View Menu
           </Link>
-        </motion.div>
+        </OpacityAnimation>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="absolute -right-10 top-4"
-        >
+        <OpacityAnimation delay={0} className="absolute -right-10 top-4">
           <Image
             src={pattern}
             alt="Landing"
             className="rotating max-xl:hidden"
           />
-        </motion.div>
+        </OpacityAnimation>
 
         <Image
           src={landingPic}

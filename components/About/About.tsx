@@ -1,13 +1,12 @@
-"use client";
-
 import Image from "next/image";
 import { Rate } from "antd";
+import Link from "next/link";
+import XAnimation from "../Animations/XAnimations";
+import YAnimation from "../Animations/YAnimation";
 
 import aboutImg from "@/public/about/about-landing.png";
 import pattern from "@/public/about/landing-pattern.svg";
 import seoImg from "@/public/about/Seo.png";
-import { motion } from "framer-motion";
-import Link from "next/link";
 
 export default function About() {
   return (
@@ -15,11 +14,9 @@ export default function About() {
       className="pt-[200px] pb-[296px] grid grid-cols-2 items-center px-10 max-lg:grid-cols-1 max-lg:gap-20
       max-w-[1378px] mx-auto max-lg:pt-[100px] max-lg:pb-[100px]"
     >
-      <motion.article
-        initial={{ x: -100, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        viewport={{ once: true }}
+      <XAnimation
+        xAxis={-100}
+        delay={0.3}
         className="flex flex-col max-lg:items-center"
       >
         <div className="flex flex-col gap-5 mb-11 max-lg:text-center">
@@ -50,26 +47,18 @@ export default function About() {
         >
           See our Chefs
         </Link>
-      </motion.article>
+      </XAnimation>
       <article className="relative mx-auto">
-        <motion.div
-          initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
+        <XAnimation delay={0.3}>
           <Image src={aboutImg} alt="About Landing" />
           <Image
             src={pattern}
             alt="About Pattern"
             className="absolute -right-20 -top-2 -z-10 rotating max-sm:hidden"
           />
-        </motion.div>
+        </XAnimation>
 
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          viewport={{ once: true }}
+        <YAnimation
           className="absolute -bottom-24 -left-52 bg-white shadow-[0_0_14px_0_rgba(0,0,0,0.2)] max-w-[400px] 
           max-lg:left-0 max-lg:bottom-0"
         >
@@ -90,7 +79,7 @@ export default function About() {
             </p>
             <Rate disabled defaultValue={5} style={{ color: "#E1B168" }} />
           </div>
-        </motion.div>
+        </YAnimation>
       </article>
     </section>
   );

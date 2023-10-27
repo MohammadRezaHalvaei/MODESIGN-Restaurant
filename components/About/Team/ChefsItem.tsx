@@ -1,9 +1,7 @@
-"use client";
-
 import SocialMedia from "@/components/Header/SocialMedia";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import YAnimation from "@/components/Animations/YAnimation";
 
 type ChefsItemProps = {
   src: StaticImageData;
@@ -15,12 +13,7 @@ type ChefsItemProps = {
 export default function ChefsItem({ src, name, role, link }: ChefsItemProps) {
   return (
     <Link href={`/chefs/${link}`} className="group text-center dur-200">
-      <motion.div
-        initial={{ y: 100, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
+      <YAnimation delay={0}>
         <div className="relative overflow-hidden">
           <Image src={src} alt={name} />
           <div
@@ -32,7 +25,7 @@ export default function ChefsItem({ src, name, role, link }: ChefsItemProps) {
         </div>
         <h5 className="h5-title mb-2 mt-7 text-[#292E36]">{name}</h5>
         <p className="parag text-[#555555]">{role}</p>
-      </motion.div>
+      </YAnimation>
     </Link>
   );
 }

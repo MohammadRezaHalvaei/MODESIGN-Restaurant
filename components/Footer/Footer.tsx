@@ -1,19 +1,16 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import SocialMedia from "../Header/SocialMedia";
+import XAnimation from "../Animations/XAnimations";
+import YAnimation from "../Animations/YAnimation";
+
 import logo from "@/public/header/Logo.svg";
-import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
     <footer className="bg-[#1F242C] text-white flex flex-col gap-16">
-      <motion.div
-        initial={{ y: 100, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        viewport={{ once: true }}
+      <YAnimation
+        delay={0.3}
         className="pt-[100px] grid grid-cols-3 items-center justify-items-center gap-16 px-4 max-md:grid-cols-1 max-md:pt-20"
       >
         <p className="font-josephin text-[22px] font-medium leading-[27.83px] underline">
@@ -22,13 +19,10 @@ export default function Footer() {
         <Image src={logo} alt="logo" />
 
         <SocialMedia />
-      </motion.div>
+      </YAnimation>
 
-      <motion.div
-        initial={{ y: 100, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        viewport={{ once: true }}
+      <YAnimation
+        delay={0.5}
         className="grid grid-cols-[0.5fr_1fr_0.5fr] items-center justify-center px-9
         max-lg:grid-cols-1 max-lg:gap-10"
       >
@@ -85,16 +79,13 @@ export default function Footer() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </YAnimation>
       <div
         className="flex justify-evenly py-[30px] border-t border-[#575B62] px-9
         max-lg:flex-col max-lg:gap-5 max-lg:items-center max-lg:px-4 max-lg:justify-center max-lg:py-5"
       >
-        <motion.p
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          viewport={{ once: true }}
+        <XAnimation
+          xAxis={-100}
           className="parag max-md:text-lg max-md:text-center"
         >
           © Copyright - Restaurantate | Coded by
@@ -114,16 +105,8 @@ export default function Footer() {
           >
             Figma
           </Link>
-        </motion.p>
-        <motion.p
-          initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="parag"
-        >
-          {new Date().getFullYear()}
-        </motion.p>
+        </XAnimation>
+        <XAnimation className="parag">{new Date().getFullYear()}</XAnimation>
       </div>
     </footer>
   );

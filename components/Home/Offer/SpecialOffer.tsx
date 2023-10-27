@@ -1,8 +1,3 @@
-"use client";
-
-import Image from "next/image";
-import { motion } from "framer-motion";
-
 import hamburgerImg from "@/public/home/offer/Hamburger.png";
 import pizzaImg from "@/public/home/offer/Pizza.png";
 import pizzaPrice from "@/public/home/offer/PizzaPrice.png";

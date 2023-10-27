@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import { motion } from "framer-motion";
+import XAnimation from "@/components/Animations/XAnimations";
 
 type SpecialOfferItemProps = {
   src: StaticImageData;
@@ -15,11 +15,9 @@ export default function SpecialOfferItem({
   bg,
 }: SpecialOfferItemProps) {
   return (
-    <motion.div
-      initial={{ x: -100, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-      viewport={{ once: true }}
+    <XAnimation
+      delay={0.2}
+      xAxis={-100}
       style={{
         backgroundImage: `url(${bg})`,
         backgroundSize: "cover",
@@ -48,6 +46,6 @@ export default function SpecialOfferItem({
       </div>
 
       <Image src={src} alt={title} className="max-lg:mx-auto" />
-    </motion.div>
+    </XAnimation>
   );
 }

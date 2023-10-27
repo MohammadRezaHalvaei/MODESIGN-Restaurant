@@ -1,7 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
+import YAnimation from "@/components/Animations/YAnimation";
 
 import appOne from "@/public/order/single/app-1.png";
 import appTwo from "@/public/order/single/app-2.png";
@@ -28,19 +26,13 @@ export default function AppScreen() {
         </div>
         <div className="grid grid-cols-3 gap-12 max-md:grid-cols-1">
           {images.map((image, index) => (
-            <motion.div
-              key={image.alt}
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              viewport={{ once: true }}
-            >
+            <YAnimation delay={index * 0.2} key={image.alt}>
               <Image
                 src={image.src}
                 alt={image.alt}
                 className="max-md:w-full"
               />
-            </motion.div>
+            </YAnimation>
           ))}
         </div>
       </div>

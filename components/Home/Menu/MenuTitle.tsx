@@ -1,20 +1,16 @@
-"use client";
-
 import Image from "next/image";
 import menuImage from "@/public/home/Menu.jpg";
-import { motion } from "framer-motion";
 import Link from "next/link";
+import OpacityAnimation from "@/components/Animations/OpacityAnimation";
+import YAnimation from "@/components/Animations/YAnimation";
 
 export default function MenuTitle() {
   return (
     <article
       className={`flex flex-col gap-[60px] max-sm:gap-8 lg:sticky top-[4%] h-fit px-4`}
     >
-      <motion.div
-        initial={{ y: 100, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
+      <YAnimation
+        delay={0}
         className="flex flex-col gap-[22px] max-lg:text-center max-lg:px-6"
       >
         <div className="flex flex-col gap-3">
@@ -33,28 +29,19 @@ export default function MenuTitle() {
           letters, as opposed to using &apos;Content here, content making it
           look like readable English.
         </p>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className="flex justify-center"
-      >
+      </YAnimation>
+      <OpacityAnimation delay={0} className="flex justify-center">
         <Image src={menuImage} alt="menu" className="max-lg:w-[80%]" />
-      </motion.div>
+      </OpacityAnimation>
 
       <Link href="/menu" className="max-lg:mx-auto">
-        <motion.button
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.3 }}
-          viewport={{ once: true }}
+        <YAnimation
+          delay={0}
           className="btn-white text-[#E1B168] font-josephin 
           text-[22px] leading-[27.83px] px-12 py-5 w-fit"
         >
           See all dishes
-        </motion.button>
+        </YAnimation>
       </Link>
     </article>
   );

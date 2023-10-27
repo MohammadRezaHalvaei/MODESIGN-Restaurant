@@ -1,10 +1,9 @@
-"use client";
-
 import ContactItem from "./ContactItem";
+import YAnimation from "@/components/Animations/YAnimation";
+
 import location from "@/public/home/icons/Location.svg";
 import openHours from "@/public/home/icons/Hours.svg";
 import reserve from "@/public/home/icons/Reserve.svg";
-import { motion } from "framer-motion";
 
 const contactDetails = [
   {
@@ -29,11 +28,8 @@ const contactDetails = [
 
 export default function Contact() {
   return (
-    <motion.section
-      initial={{ y: 100, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
+    <YAnimation
+      delay={0}
       className="grid grid-cols-3 gap-16  mb-36 max-xl:grid-cols-2 px-5 max-lg:grid-cols-1"
     >
       {contactDetails.map((contact) => (
@@ -45,6 +41,6 @@ export default function Contact() {
           text={contact.text}
         />
       ))}
-    </motion.section>
+    </YAnimation>
   );
 }

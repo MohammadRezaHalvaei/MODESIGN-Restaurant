@@ -1,7 +1,7 @@
-"use client";
-
 import AppsItem from "./AppsItem";
-import { motion } from "framer-motion";
+import Link from "next/link";
+import OpacityAnimation from "../Animations/OpacityAnimation";
+import YAnimation from "../Animations/YAnimation";
 
 import delicious from "@/public/order/delicious.svg";
 import foodDelivery from "@/public/order/food delivery.svg";
@@ -9,7 +9,6 @@ import foodCourt from "@/public/order/food court.svg";
 import foodHut from "@/public/order/food hut.svg";
 import daily from "@/public/order/daily delivery.svg";
 import fastFood from "@/public/order/fast food.svg";
-import Link from "next/link";
 
 const apps = [
   { src: delicious, alt: "Delicious Food Delivery" },
@@ -40,28 +39,19 @@ export default function Apps() {
       </article>
       <article className="grid grid-cols-3 gap-y-[50px] gap-x-[50px] max-lg:grid-cols-2 max-md:grid-cols-1 max-md:gap-y-8">
         {apps.map((app) => (
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            key={app.alt}
-          >
+          <OpacityAnimation delay={0.2} key={app.alt}>
             <AppsItem src={app.src} alt={app.alt} />
-          </motion.div>
+          </OpacityAnimation>
         ))}
       </article>
       <Link href="order/app">
-        <motion.button
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.2 }}
-          viewport={{ once: true }}
+        <YAnimation
+          delay={0}
           className="btn-white px-12 py-5 text-[#E1B168] text-[22px] leading-[27.83px]
           max-md:px-8 max-md:py-3 max-md:text-base"
         >
           Order Now
-        </motion.button>
+        </YAnimation>
       </Link>
     </section>
   );

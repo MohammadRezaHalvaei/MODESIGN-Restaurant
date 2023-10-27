@@ -1,14 +1,12 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
+import Link from "next/link";
+import YAnimation from "@/components/Animations/YAnimation";
 
 import appImage from "@/public/order/single/App logo.svg";
 import pattern from "@/public/order/single/pattern.png";
 import landing from "@/public/order/single/app-brief.png";
 import apple from "@/public/order/single/appstore.png";
 import google from "@/public/order/single/googleplay.png";
-import Link from "next/link";
 
 export default function AppBrief() {
   return (
@@ -38,20 +36,14 @@ export default function AppBrief() {
               innovation rather than client-centric data.
             </p>
           </div>
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="flex gap-[30px]"
-          >
+          <YAnimation delay={0.3} className="flex gap-[30px]">
             <Link href="https://apple.com">
               <Image src={apple} alt="Apple Store" className="max-h-[61px]" />
             </Link>
             <Link href="https://google.com">
               <Image src={google} alt="Google Play" className="max-h-[61px]" />
             </Link>
-          </motion.div>
+          </YAnimation>
         </div>
         <Image
           src={pattern}

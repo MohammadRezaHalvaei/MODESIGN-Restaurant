@@ -1,8 +1,7 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import XAnimation from "@/components/Animations/XAnimations";
+import YAnimation from "@/components/Animations/YAnimation";
 
 type BlogCardTypes = {
   src: string;
@@ -13,13 +12,7 @@ type BlogCardTypes = {
 
 export default function BlogCard({ src, title, text, link }: BlogCardTypes) {
   return (
-    <motion.div
-      initial={{ y: 100, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.3 }}
-      viewport={{ once: true }}
-      className="group grid auto-rows-auto"
-    >
+    <YAnimation delay={0.3} className="group grid auto-rows-auto">
       <div className="relative">
         <Image
           src={src}
@@ -45,30 +38,24 @@ export default function BlogCard({ src, title, text, link }: BlogCardTypes) {
         className="px-10 py-11 flex flex-col gap-5 border border-[#C4C4C4] text-[#292E36]
         max-lg:px-6 max-lg:py-6"
       >
-        <p
+        <div
           className="font-josephin font-medium text-[15px] w-fit max-lg:text-xs max-lg:gap-3
             leading-[11.57px] tracking-[0.2em] flex gap-5 max-lg:flex-col"
         >
-          <motion.span
-            initial={{ x: 100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
+          <XAnimation
+            delay={0.3}
             className="border-t border-b border-[#E1B168] py-1.5"
           >
             RESTAURANTS
-          </motion.span>
+          </XAnimation>
 
-          <motion.span
-            initial={{ x: 100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            viewport={{ once: true }}
+          <XAnimation
+            delay={0.6}
             className="border-t border-b border-[#E1B168] py-1.5"
           >
             FEB 22, 2022
-          </motion.span>
-        </p>
+          </XAnimation>
+        </div>
 
         <Link
           href={`blog/${link}`}
@@ -80,6 +67,6 @@ export default function BlogCard({ src, title, text, link }: BlogCardTypes) {
 
         <p className="parag text-[#555555] max-lg:text-lg">{text}</p>
       </div>
-    </motion.div>
+    </YAnimation>
   );
 }
