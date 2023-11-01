@@ -34,7 +34,7 @@ export default function Footer() {
             CONTACT
           </p>
           <p className="parag leading-[33.9px]">
-            Iran - Alborz
+            Iran
             <br />
             <Link href="tel:+989357910493">
               Call - <span className="text-[#E1B168]">+989357910493</span>
