@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Rate } from "antd";
-import Link from "next/link";
+import { Link } from "nextjs13-progress";
 import HorizontalAnimation from "@/components/Animations/HorizontalAnimation";
 import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 

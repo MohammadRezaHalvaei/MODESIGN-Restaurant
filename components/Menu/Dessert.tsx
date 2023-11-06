@@ -6,7 +6,7 @@ import apple from "@/public/home/menu/Apple.png";
 import lemon from "@/public/home/menu/Lemon.png";
 import octopus from "@/public/home/menu/Octopus.png";
 import seaBass from "@/public/home/menu/Sea Bass.png";
-import Link from "next/link";
+import { Link } from "nextjs13-progress";
 
 const dessert = [
   {

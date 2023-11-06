@@ -1,6 +1,6 @@
 import SocialMedia from "@/components/Header/SocialMedia";
 import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
+import { Link } from "nextjs13-progress";
 import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 
 type ChefsItemProps = {

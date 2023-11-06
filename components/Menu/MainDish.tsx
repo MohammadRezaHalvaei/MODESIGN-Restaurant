@@ -6,7 +6,7 @@ import grilled from "@/public/home/menu/Grilled.png";
 import roastBeef from "@/public/home/menu/Roast-Beef.png";
 import marrkesh from "@/public/home/menu/Marrkesh.png";
 import spicy from "@/public/home/menu/Spicy.png";
-import Link from "next/link";
+import { Link } from "nextjs13-progress";
 
 const main = [
   {

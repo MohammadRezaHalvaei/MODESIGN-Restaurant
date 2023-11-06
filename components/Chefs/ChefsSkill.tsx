@@ -4,7 +4,7 @@ import OpacityAnimation from "../Animations/OpacityAnimation";
 import VerticalAnimation from "../Animations/VerticalAnimation";
 
 import skilled from "@/public/chefs/Skilled.jpg";
-import Link from "next/link";
+import { Link } from "nextjs13-progress";
 
 const progresses = [
   { title: "Experienced", progress: 90 },

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "nextjs13-progress";
 import HorizontalAnimation from "@/components/Animations/HorizontalAnimation";
 
 export default function Reservation() {

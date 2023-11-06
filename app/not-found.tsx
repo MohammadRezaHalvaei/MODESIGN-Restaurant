@@ -1,6 +1,6 @@
 import Image from "next/image";
 import notFoundImg from "@/public/not-found.png";
-import Link from "next/link";
+import { Link } from "nextjs13-progress";
 
 export default function NotFound() {
   return (

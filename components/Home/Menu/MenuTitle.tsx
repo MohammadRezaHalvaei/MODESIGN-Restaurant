@@ -1,6 +1,6 @@
 import Image from "next/image";
 import menuImage from "@/public/home/Menu.jpg";
-import Link from "next/link";
+import { Link } from "nextjs13-progress";
 import OpacityAnimation from "@/components/Animations/OpacityAnimation";
 import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 

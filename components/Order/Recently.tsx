@@ -3,7 +3,7 @@ import RecentlyItems from "./RecentlyItems";
 import pancake from "@/public/order/pancakes.jpg";
 import hawaiian from "@/public/order/hawaiian.jpg";
 import vegBurger from "@/public/order/veg burger.jpg";
-import Link from "next/link";
+import { Link } from "nextjs13-progress";
 
 const items = [
   { src: pancake, title: "Delicious pancakes", price: "14" },

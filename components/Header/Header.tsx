@@ -1,6 +1,6 @@
 import Image from "next/image";
 import HeaderMenu from "./HeaderMenu";
-import Link from "next/link";
+import { Link } from "nextjs13-progress";
 import storyPic from "@/public/header/Logo.svg";
 
 export default function Header() {

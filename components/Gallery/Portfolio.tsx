@@ -1,5 +1,5 @@
 import PortfolioItem from "./PortfolioItem";
-import Link from "next/link";
+import { Link } from "nextjs13-progress";
 import OpacityAnimation from "../Animations/OpacityAnimation";
 
 import pasta from "@/public/gallery/pasta.jpg";

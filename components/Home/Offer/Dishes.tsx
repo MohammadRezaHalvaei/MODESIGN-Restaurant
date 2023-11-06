@@ -1,5 +1,5 @@
 import DishesItem from "./DishesItem";
-import Link from "next/link";
+import { Link } from "nextjs13-progress";
 import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 
 import dishOne from "@/public/home/offer/dishes/1.png";

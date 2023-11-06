@@ -6,7 +6,7 @@ import sacallops from "@/public/home/menu/Scallops.png";
 import spring from "@/public/home/menu/Spring.png";
 import frenchOnion from "@/public/home/menu/French-Onion.png";
 import tomato from "@/public/home/menu/Tomato.png";
-import Link from "next/link";
+import { Link } from "nextjs13-progress";
 
 const starter = [
   {

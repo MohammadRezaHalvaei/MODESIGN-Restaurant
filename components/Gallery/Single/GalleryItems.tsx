@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
+import { Link } from "nextjs13-progress";
 
 import fb from "@/public/gallery/single/Fb.svg";
 import insta from "@/public/gallery/single/Insta.svg";

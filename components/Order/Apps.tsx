@@ -1,5 +1,5 @@
 import AppsItem from "./AppsItem";
-import Link from "next/link";
+import { Link } from "nextjs13-progress";
 import OpacityAnimation from "../Animations/OpacityAnimation";
 import VerticalAnimation from "../Animations/VerticalAnimation";
 

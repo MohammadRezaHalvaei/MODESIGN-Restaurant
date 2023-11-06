@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
+import { Link } from "nextjs13-progress";
 
 import call from "@/public/contact/visitCall.svg";
 import mail from "@/public/contact/visitMail.svg";

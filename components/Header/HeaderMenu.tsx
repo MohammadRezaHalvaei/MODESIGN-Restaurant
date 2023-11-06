@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "nextjs13-progress";
 import SocialMedia from "./SocialMedia";
 import { MenuOutlined } from "@ant-design/icons";
 import { useSelectedLayoutSegment } from "next/navigation";

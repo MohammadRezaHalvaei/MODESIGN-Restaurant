@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { cormorant, josefin, cervanttis } from "./fonts";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
+import { Next13NProgress } from "nextjs13-progress";
 
 // export const dynamic = "force-dynamic";
 
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Next13NProgress color="#E1B168" height={3} />
       </body>
     </html>
   );
