@@ -26,7 +26,7 @@ export default function BlogCard({ src, title, text, link }: BlogCardTypes) {
           group-hover:opacity-100 transition-all duration-600"
         >
           <Link
-            href={`blog/${link}`}
+            href={`/blog/${link}`}
             className="btn-white text-[#E1B168] py-5 px-12 text-[22px] max-xl:text-base max-xl:px-6 max-xl:py-2.5
             leading-[27.83px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-md:py-4 max-md:px-10 max-md:text-lg"
           >
@@ -58,7 +58,7 @@ export default function BlogCard({ src, title, text, link }: BlogCardTypes) {
         </div>
 
         <Link
-          href={`blog/${link}`}
+          href={`/blog/${link}`}
           className="font-cormorant text-[35px] leading-[42px] font-bold hover:text-[#E1B168] dur-200
           max-lg:text-2xl"
         >
