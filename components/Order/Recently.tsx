@@ -2,7 +2,7 @@ import RecentlyItems from "./RecentlyItems";
 
 import pancake from "@/public/order/pancakes.jpg";
 import hawaiian from "@/public/order/hawaiian.jpg";
-import vegBurger from "@/public/order/veg burger.jpg";
+import vegBurger from "@/public/order/veg-burger.jpg";
 import { Link } from "nextjs13-progress";
 
 const items = [

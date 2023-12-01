@@ -1,8 +1,8 @@
 import RecentlyItems from "./RecentlyItems";
 
-import spring from "@/public/order/spring onion.jpg";
-import sausage from "@/public/order/veg sausage.jpg";
-import pancake from "@/public/order/dessert pancake.jpg";
+import spring from "@/public/order/spring-onion.jpg";
+import sausage from "@/public/order/veg-sausage.jpg";
+import pancake from "@/public/order/dessert-pancake.jpg";
 import { Link } from "nextjs13-progress";
 
 const items = [

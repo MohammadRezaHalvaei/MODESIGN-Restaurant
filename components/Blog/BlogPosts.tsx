@@ -23,7 +23,7 @@ const posts = [
     subTitle:
       "Collaborative on low-hanging fruit to identify a ballpark value added matrix economically and the creative activity to beta test override the food quality.",
     src: "/blog/single/hamburger.jpg",
-    desc: "Best Seafood in San Francisco",
+    desc: "Best Seafood in cisco",
   },
   {
     id: 4,

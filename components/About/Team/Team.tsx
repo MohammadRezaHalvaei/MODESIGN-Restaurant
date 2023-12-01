@@ -2,9 +2,9 @@ import ChefsItem from "./ChefsItem";
 import VerticalAnimation from "@/components/Animations/VerticalAnimation";
 
 import avroko from "@/public/about/team/Avroko.png";
-import evan from "@/public/about/team/Evan Mattew.png";
-import diane from "@/public/about/team/Diane Clarkson.png";
-import dan from "@/public/about/team/Dan Rafalin.png";
+import evan from "@/public/about/team/Evan-Mattew.png";
+import diane from "@/public/about/team/Diane-Clarkson.png";
+import dan from "@/public/about/team/Dan-Rafalin.png";
 
 const chefs = [
   { src: avroko, name: "Avroko", role: "Master Chef", link: "Avroko" },

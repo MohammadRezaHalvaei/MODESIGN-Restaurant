@@ -4,11 +4,11 @@ import OpacityAnimation from "../Animations/OpacityAnimation";
 import VerticalAnimation from "../Animations/VerticalAnimation";
 
 import delicious from "@/public/order/delicious.svg";
-import foodDelivery from "@/public/order/food delivery.svg";
-import foodCourt from "@/public/order/food court.svg";
-import foodHut from "@/public/order/food hut.svg";
-import daily from "@/public/order/daily delivery.svg";
-import fastFood from "@/public/order/fast food.svg";
+import foodDelivery from "@/public/order/food-delivery.svg";
+import foodCourt from "@/public/order/food-court.svg";
+import foodHut from "@/public/order/food-hut.svg";
+import daily from "@/public/order/daily-delivery.svg";
+import fastFood from "@/public/order/fast-food.svg";
 
 const apps = [
   { src: delicious, alt: "Delicious Food Delivery" },

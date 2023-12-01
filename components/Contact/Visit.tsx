@@ -1,5 +1,5 @@
-import los from "@/public/contact/Los Angeles.png";
-import san from "@/public/contact/San Francisco.png";
+import los from "@/public/contact/Los-Angeles.png";
+import san from "@/public/contact/San-Francisco.png";
 import VisitItem from "./VisitItem";
 
 const places = [
